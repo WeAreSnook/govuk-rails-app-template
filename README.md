@@ -12,18 +12,18 @@ This means certain features described in the GDS conventions are not included. O
 
 ### Authentication
 
-- (gds-sso)[https://github.com/alphagov/gds-sso] - It does not integrate with (signon)[https://github.com/alphagov/signon].
+- [gds-sso](https://github.com/alphagov/gds-sso) - It does not integrate with [signon](https://github.com/alphagov/signon).
 
 ### Sending emails
 
-- (notify)[https://github.com/dxw/mail-notify] - It does not integrate with [GOV.UK Notify](https://www.notifications.service.gov.uk/) for sending transactional emails. Not all applications need to send emails. For those that do, there is some admin involved and so this feels something that can be added later by the team.
+- [notify](https://github.com/dxw/mail-notify) - It does not integrate with [GOV.UK Notify](https://www.notifications.service.gov.uk/) for sending transactional emails. Not all applications need to send emails. For those that do, there is some admin involved and so this feels something that can be added later by the team.
 
 ### Publisher tools
 
 Some of the guidance on using publisher may not be relevant to all projects.
 
-- (govuk_publishing_components)[https://github.com/alphagov/govuk_publishing_components] -
-- (govuk_schemas)[https://github.com/alphagov/govuk_schemas] - I've not come across this before so needs some more research.
+- [govuk_publishing_components](https://github.com/alphagov/govuk_publishing_components) -
+- [govuk_schemas](https://github.com/alphagov/govuk_schemas) - I've not come across this before so needs some more research.
 
 ### GDS Deployment
 
@@ -52,12 +52,11 @@ Not all projects that use this template will be deployed on Government infrastru
 
 **Backend**
 
-- Installs [rubocop] for linting
-- Uses [rubocop-govuk](https://github.com/alphagov/rubocop-govuk) rules and configuration to lint and format ruby code
+- Installs [rubocop](https://github.com/rubocop-hq/rubocop) using [rubocop-govuk](https://github.com/alphagov/rubocop-govuk) rules and configuration to lint and format ruby code.
 
 **Frontend**
 
-- Installs [scss-lint-govuk](https://github.com/alphagov/scss-lint-govuk) to lint SCSS files
+- Installs [scss-lint-govuk](https://github.com/alphagov/scss-lint-govuk) to lint SCSS files.
 
 ### Testing tools
 
