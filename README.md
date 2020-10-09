@@ -100,7 +100,7 @@ You will need the following dependencies installed on your machine.
 ### Running it locally
 
 1. `git clone https://github.com/WeAreSnook/govuk_rails_app_template.git` the repository to where you store your code.
-2. `cd` to where you want to create your rails project.
+2. `cd` to where you want to create your Rails project.
 3. Run `rails new APP_NAME -d postgresql -m PATH_TO_GOVUK_RAILS_APP_TEMPLATE/template.rb`
 
 ## Contributing
