@@ -1,0 +1,5 @@
+assets: bin/webpack-dev-server
+web: bin/rails server
+<% if config[:sidekiq] -%>
+worker: bundle exec sidekiq
+<% end %>
