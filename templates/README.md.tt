@@ -1,0 +1,49 @@
+# <%= app_name %>
+
+Add a background description for your project here. Who is it for? What does it do?
+
+## Pre-requisites
+
+- **Ruby** - You will need at least version: <%= RUBY_VERSION %>, we use [RVM](https://rvm.io/) to manage different versions of Ruby.
+- **Postgres** - We use Postgres for our database, install it locally on Mac OSX with [Homebrew](https://brew.sh/). Once installed you can run `brew services start postgresql`.
+- **Redis** - Install a redis server locally with `brew install redis` and then run `brew services start redis` to get it up and running.
+
+## Getting started
+
+1. Git clone the repo to your local machine
+2. Change into the directory with `cd <%= app_name %>`
+3. `bundle install` to install ruby dependencies.
+4. `yarn install` to install frontend depenencies.
+5. `db:create && db:migrate && db:seed` builds the database, runs initial migrations and seeds the database
+6. To run the app use a process manager like [hivemind](https://github.com/DarthSim/hivemind) to run the app locally from the development Procfile `hivemind Procfile.dev`. This mirrors how the app will run in production on Heroku.
+
+## Tests
+
+This project uses [rspec](https://github.com/rspec/rspec-rails) for automated tests in Ruby. Run the test suite with `bundle exec rspec` from the project root.
+
+### JavaScript
+
+This project uses [jasmine]
+
+## Documentation
+
+> Don't document the program; program the document. -- unknown
+
+Documentation is good for your health. Write and find [the documentation](docs/index.md) in the `docs` directory.
+
+### Technical decisions
+
+This project uses Architectural Decision Records to document technical decisions.
+
+> Read the history of [technical decisions](docs/adr/README.md)
+
+
+## Style guide
+
+### Ruby
+
+The project uses [rubocop](https://github.com/rubocop-hq/rubocop) with the configuration from [rubocop-govuk](https://github.com/alphagov/rubocop-govuk) to maintain code style and format consistency.
+
+### SCSS
+
+## Contributing
