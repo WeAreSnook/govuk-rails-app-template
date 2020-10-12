@@ -104,3 +104,5 @@ You will need the following dependencies installed on your machine.
 3. Run `rails new APP_NAME -d postgresql -m PATH_TO_GOVUK_RAILS_APP_TEMPLATE/template.rb`
 
 ## Contributing
+
+We welcome PRs and issues to improve this Rails template. Before you create an issue or open a pull request [read the guide to contributing](CONTRIBUTING.md)
