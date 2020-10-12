@@ -75,13 +75,13 @@ def add_dotenv
   template 'templates/.env.template', '.env.template'
 end
 
+## Run the template
+
 source_paths
-
 sidekiq = yes?('Do you want to install sidekiq? [Y/n]')
+
 install_sidekiq if sidekiq
-
 add_dotenv
-
 after_bundle do
   create_docs
   create_readme
