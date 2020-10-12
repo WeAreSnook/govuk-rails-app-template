@@ -38,7 +38,7 @@ def create_docs
 end
 
 def create_readme
-  template 'templates/README.md.tt', 'README.md'
+  template 'templates/README.md.tt', 'README.md', force: true
 end
 
 def create_contributing
