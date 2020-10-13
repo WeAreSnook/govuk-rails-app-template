@@ -151,6 +151,23 @@ def add_dotenv
   template 'templates/.env.template', '.env.template'
 end
 
+def add_rubocop
+  gem 'rubocop', require: false
+end
+
+def add_rubocop_govuk
+  gem 'rubocop-govuk'
+end
+
+def add_backend_linting_tools
+  add_rubocop
+  add_rubocop_govuk
+end
+
+def create_rubocop_yml
+  template 'templates/.rubocop.yml', '.rubocop.yml'
+end
+
 ## Run the template
 
 source_paths
@@ -160,6 +177,7 @@ sidekiq = yes?('Do you want to install sidekiq? [Y/n]')
 install_sidekiq if sidekiq
 add_dotenv
 add_backend_test_tools
+add_backend_linting_tools
 after_bundle do
   create_docs
   create_readme
@@ -171,4 +189,5 @@ after_bundle do
   create_simplecov_support
   create_webmock_support
   create_dev_procfile({ sidekiq: sidekiq })
+  create_rubocop_yml
 end
