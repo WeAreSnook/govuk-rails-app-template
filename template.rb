@@ -190,4 +190,7 @@ after_bundle do
   create_webmock_support
   create_dev_procfile({ sidekiq: sidekiq })
   create_rubocop_yml
+  git checkout: '-b main'
+  git add: '-A .'
+  git commit: '-m "setup: GOVUK Rails app setup complete"'
 end
