@@ -121,9 +121,45 @@ def add_backend_test_tools
   add_rspec
 end
 
-source_paths
-add_backend_test_tools
+def install_sidekiq
+  add_sidekiq
+  add_sidekiq_scheduler
+  create_sidekiq_initializer
+end
 
+def add_sidekiq
+  gem 'sidekiq'
+end
+
+def add_sidekiq_scheduler
+  gem 'sidekiq-scheduler'
+end
+
+def create_sidekiq_initializer
+  template 'templates/config/initializers/sidekiq.rb', 'config/initializers/sidekiq.rb'
+end
+
+def create_dev_procfile(options)
+  template 'templates/Procfile.dev.tt', 'Procfile.dev', options
+end
+
+def add_dotenv
+  insert_into_file 'Gemfile', after: "ruby '#{RUBY_VERSION}'" do
+    "\ngem 'dotenv-rails', groups: [:development, :test]"
+  end
+  template 'templates/.env', '.env'
+  template 'templates/.env.template', '.env.template'
+end
+
+## Run the template
+
+source_paths
+
+sidekiq = yes?('Do you want to install sidekiq? [Y/n]')
+
+install_sidekiq if sidekiq
+add_dotenv
+add_backend_test_tools
 after_bundle do
   create_docs
   create_readme
@@ -134,4 +170,5 @@ after_bundle do
   create_shoulda_matchers_support
   create_simplecov_support
   create_webmock_support
+  create_dev_procfile({ sidekiq: sidekiq })
 end
